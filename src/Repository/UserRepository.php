@@ -29,7 +29,7 @@ class UserRepository extends ServiceEntityRepository
             ->getQuery()
             ->execute();
     }
-    
+
 //    /**
 //     * @return User[] Returns an array of User objects
 //     */

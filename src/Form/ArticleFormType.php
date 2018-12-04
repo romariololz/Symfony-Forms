@@ -12,7 +12,6 @@ namespace App\Form;
 use App\Entity\Article;
 use App\Entity\User;
 use App\Repository\UserRepository;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -48,7 +47,8 @@ class ArticleFormType extends AbstractType
                 },
                 'placeholder' => 'Choose an author',
                 'choices' => $this->userRepository
-                    ->findAllEmailAlphabetical()
+                    ->findAllEmailAlphabetical(),
+                'invalid_message' => 'Symfony is too smart for your hacking!',
             ])
         ;
     }
